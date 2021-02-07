@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = "oh-so-secret"
 
 debug = DebugToolbarExtension(app)
 
-#so it looks like you would create the html 
+#so it looks like you would create the html in templates folder first then make the route after
 @app.route('/')
 def index():
     """Return homepage."""
