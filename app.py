@@ -8,10 +8,29 @@ COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "oh-so-secret"
-
+#to install dowload it through PIP, IMPORT IT ON TOP(from flask_debugtoolbar import DebugToolbarExtension), and intitialize it by passing in our flask app(ebug = DebugToolbarExtension(app))
 debug = DebugToolbarExtension(app)
 
 #so it looks like you would create the html in templates folder first then make the route after
+"""
+Dynamic Templates
+Jinja will replace things like {{ msg }} with value of msg passed when rendering:
+
+templates/lucky.html
+<h1>Hi!</h1>
+
+<p>Lucky number: {{ lucky_num }}</p>
+ 
+app.py
+@app.route("/lucky")
+def show_lucky_num():
+    "Example of simple dynamic template"
+
+    num = randint(1, 100)
+
+    return render_template("lucky.html",
+                          lucky_num=num)
+"""
 @app.route('/')
 def index():
     """Return homepage."""

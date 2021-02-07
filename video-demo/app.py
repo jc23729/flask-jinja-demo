@@ -3,7 +3,7 @@ from random import randint,  choice, sample
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
-
+##part of requirements to setup degugtoolbar
 app.config['SECRET_KEY'] = "chickenzarecool21837"
 debug = DebugToolbarExtension(app)
 
