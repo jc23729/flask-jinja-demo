@@ -52,7 +52,6 @@ def lucky_number():
     num = randint(1, 10)
     return render_template('lucky.html', lucky_num=num, msg="You are so lucky!")
 
-
 @app.route('/spell/<word>')
 def spell_word(word):
     """Spells a word out letter by letter"""
