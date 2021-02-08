@@ -26,7 +26,7 @@ def show_form_2():
     """Shows greeter V2 Form"""
     return render_template("form_2.html")
 
-
+#define a list of compliments
 COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 
 
@@ -34,7 +34,7 @@ COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 def get_greeting():
     """Greets and compliments a user"""
     username = request.args["username"]#data structure similar to dictionary, username
-    nice_thing = choice(COMPLIMENTS)
+    nice_thing = choice(COMPLIMENTS)#setup compliments on top, imported choice on top
     return render_template("greet.html", username=username, compliment=nice_thing)#you pass username to the form
 
 
@@ -45,13 +45,30 @@ def get_greeting_2():
     wants = request.args.get("wants_compliments")
     nice_things = sample(COMPLIMENTS, 3)
     return render_template("greet_2.html", username=username, wants_compliments=wants, compliments=nice_things)
+"""
+Conditionals in Jinja
+{% if CONDITION_EXPR %} ... {% endif %}
 
+{% if compliments %}
+  You're so:
+  ...
+{% endif %}
+Loops in Jinja
+{% for VAR in ITERABLE %} ... {% endfor %}
+
+<ul>
+  {% for compliment in compliments %}
+    <li>{{ compliment }}</li>
+  {% endfor %}
+</ul>
+"""
 
 @app.route('/lucky')
 def lucky_number():
     """Shows a random number to a user"""
     num = randint(1, 10)
     return render_template('lucky.html', lucky_num=num, msg="You are so lucky!")
+# if lucky_num ==3:
 
 @app.route('/spell/<word>')
 def spell_word(word):
