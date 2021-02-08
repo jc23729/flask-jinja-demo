@@ -68,7 +68,10 @@ def lucky_number():
     """Shows a random number to a user"""
     num = randint(1, 10)
     return render_template('lucky.html', lucky_num=num, msg="You are so lucky!")
-# if lucky_num ==3:
+"""{% if compliments %}
+  You're so:
+  ...
+{% endif %}"""
 
 @app.route('/spell/<word>')
 def spell_word(word):
