@@ -86,7 +86,9 @@ def spell_word(word):
     """Spells a word out letter by letter"""
     caps_word = word.upper()
     return render_template('spell_word.html', word=caps_word)
-
+# @app.route('/spell/<word>')
+# def spell_word(word):
+#     return render_template('spell_word_html', word=word)
 
 @app.route('/hello')
 def say_hello():
