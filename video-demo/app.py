@@ -73,6 +73,14 @@ def lucky_number():
   ...
 {% endif %}"""
 
+
+"""{% for VAR in ITERABLE %} ... {% endfor %}
+
+<ul>
+  {% for compliment in compliments %}
+    <li>{{ compliment }}</li>
+  {% endfor %}
+</ul>"""
 @app.route('/spell/<word>')
 def spell_word(word):
     """Spells a word out letter by letter"""
