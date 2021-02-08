@@ -13,7 +13,8 @@ def home_page():
     """Shows home page"""
     return render_template('home.html')
 
-##GREETER DEMO
+##GREETER DEMO you request this webpage and shows the greeter page, next set up route for /greet
+#<form action="/greet"> will send the user to the /greet route 
 @app.route('/form')
 def show_form():
     """Shows greeter V1 Form"""
@@ -32,9 +33,9 @@ COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 @app.route('/greet')
 def get_greeting():
     """Greets and compliments a user"""
-    username = request.args["username"]
+    username = request.args["username"]#data structure similar to dictionary, username
     nice_thing = choice(COMPLIMENTS)
-    return render_template("greet.html", username=username, compliment=nice_thing)
+    return render_template("greet.html", username=username, compliment=nice_thing)#you pass username to the form
 
 
 @app.route('/greet-2')
