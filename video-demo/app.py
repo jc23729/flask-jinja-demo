@@ -164,3 +164,4 @@ POSTS = {
 def find_post(id):
     post = POSTS.get(id,  "Post not found")
     return f"<p>{post}</p>"
+
